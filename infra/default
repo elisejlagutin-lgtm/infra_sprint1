@@ -18,6 +18,7 @@ erver {
         try_files $uri /index.html;
     }
 
+
     listen 443 ssl; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/weer.3utilities.com/fullchain.pem; # managed by Certbot
     ssl_certificate_key /etc/letsencrypt/live/weer.3utilities.com/privkey.pem; # managed by Certbot
