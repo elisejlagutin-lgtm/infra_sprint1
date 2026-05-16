@@ -13,8 +13,8 @@ server {
     }
 
     location / {
-        root   /var/www/taski/static;
-        index  index.html index.htm;
+        root   /var/www/taski/;
+        index  index.html;
         try_files $uri /index.html;
     }
 
