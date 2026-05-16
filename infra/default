@@ -1,4 +1,4 @@
-erver {
+server {
     server_name weer.3utilities.com;
     location /api/ {
         # Эта команда определяет, куда нужно перенаправить запрос.
