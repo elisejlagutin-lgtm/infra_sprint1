@@ -1,22 +1,18 @@
 server {
     server_name weer.3utilities.com;
     location /api/ {
-        # Эта команда определяет, куда нужно перенаправить запрос.
         proxy_pass http://127.0.0.1:8000;
     }
     location /static/ {
 	alias /var/www/taski/static_backend/;
     }
-    # Новый блок.
     location /admin/ {
         proxy_pass http://127.0.0.1:8000;
     }
-
+    
     location / {
-
-        root   /var/www/html;
-        index  index.nginx-debian.html;
-        }
+        proxy_pass http://127.0.0.1:8000;
+    }
 
     listen 443 ssl; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/weer.3utilities.com/fullchain.pem; # managed by Certbot
@@ -41,7 +37,7 @@ server {
 	alias /var/www/kittygram/static/static_backend/;
     }
     location / {
-         root   /var/www/kittygram;
+        root  /var/www/kittygram;
         index  index.html index.htm;
         try_files $uri /index.html;
     }
