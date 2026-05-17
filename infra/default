@@ -28,13 +28,13 @@ server {
     server_name kitty.3utilities.com;
 
     location /api/ {
-        proxy_pass http://127.0.0.1:8000;
+        proxy_pass http://127.0.0.1:8001;
     }
     location /signup/ {
-        proxy_pass http://127.0.0.1:8001/;
+        proxy_pass http://127.0.0.1:8001;
     }
     location /admin/ {
-        proxy_pass http://127.0.0.1:8000;
+        proxy_pass http://127.0.0.1:8001;
     }
     location /static_backend/ {
 	alias /var/www/kittygram/static/static_backend/;
