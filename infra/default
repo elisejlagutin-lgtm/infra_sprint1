@@ -14,7 +14,7 @@ server {
         root   /var/www/taski;
         index  index.html index.htm;
         try_files $uri /index.html;
-    }
+        }
 
     listen 443 ssl; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/weer.3utilities.com/fullchain.pem; # managed by Certbot
@@ -27,13 +27,13 @@ server {
     server_name kitty.3utilities.com;
 
     location /api/ {
-        proxy_pass http://127.0.0.1:8001/;
+        proxy_pass http://127.0.0.1:8000/;
     }
     location /signup/ {
-        proxy_pass http://127.0.0.1:8001/;
+        proxy_pass http://127.0.0.1:8000/;
     }
     location /admin/ {
-        proxy_pass http://127.0.0.1:8001/;
+        proxy_pass http://127.0.0.1:8000/;
     }
     location /static_backend/ {
 	alias /var/www/kittygram/static/static_backend/;
