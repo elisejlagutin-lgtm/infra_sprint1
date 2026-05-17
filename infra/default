@@ -13,10 +13,11 @@ server {
     }
 
     location / {
-        root   /var/www/taski;
+
+        root   /var/www/Taski;
         index  index.html index.htm;
-        try_files $uri /index.html;
-    }
+        try_files $uri /index.html =404;
+        }
 
     listen 443 ssl; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/weer.3utilities.com/fullchain.pem; # managed by Certbot
