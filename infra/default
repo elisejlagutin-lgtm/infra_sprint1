@@ -11,7 +11,9 @@ server {
     }
     
     location / {
-        proxy_pass http://127.0.0.1:8000;
+        root   /var/www/taski;
+        index  index.html index.htm;
+        try_files $uri /index.html;
     }
 
     listen 443 ssl; # managed by Certbot
