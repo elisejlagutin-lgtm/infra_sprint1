@@ -1,5 +1,5 @@
 server {
-    server_name weer.3utilities.com;
+    server_name 81.26.183.15 weer.3utilities.com;
     location /api/ {
         proxy_pass http://127.0.0.1:8000;
     }
@@ -24,22 +24,22 @@ server {
 
 }
 server {
-    server_name kitty.3utilities.com;
+    server_name 81.26.183.15 kitty.3utilities.com;
 
     location /api/ {
-        proxy_pass http://127.0.0.1:8000/;
+        proxy_pass http://127.0.0.1:8000;
     }
     location /signup/ {
-        proxy_pass http://127.0.0.1:8000/;
+        proxy_pass http://127.0.0.1:8000;
     }
     location /admin/ {
-        proxy_pass http://127.0.0.1:8000/;
+        proxy_pass http://127.0.0.1:8000;
     }
     location /static_backend/ {
-	alias /var/www/kittygram/static/static_backend/;
+        alias /var/www/kittygram/static/static_backend/;
     }
     location / {
-        root  /var/www/kittygram;
+         root   /var/www/kittygram;
         index  index.html index.htm;
         try_files $uri /index.html;
     }
