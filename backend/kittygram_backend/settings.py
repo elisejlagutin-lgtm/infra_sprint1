@@ -1,8 +1,10 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = os.getenv('SECRET_KEY')
+load_dotenv(BASE_DIR / '.env')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'default-test-secret-key')
 
 DEBUG = False
 
